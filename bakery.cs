@@ -22,25 +22,26 @@ namespace BakeryStore
 
   }
 
-  // public class Pastry
-  // {
-  //   public int Muffin {get; set;}
-  //   public int PastryCost {get; set;}
-  //   public int PastryCount {get; set;}
-  //
-  //   public Pastry(string breadChoice)
-  //   {
-  //     MuffinCost = 2;
-  //     PastryCount = 0;
-  //   }
-  //
-  //   public int CalculatePastry()
-  //   {
-  //     PastryCost = PastryCost + Muffin;
-  //     PastryCount ++;
-  //     return PastryCost;
-  //   }
-  //
-  // }
+  public class Pastry
+  {
+    public double PastryCost {get; set;}
+
+    public Pastry()
+    {
+      PastryCost = 2;
+    }
+
+    public double AddPastry(double pastryCount, double thirdPastryCount)
+    {
+      PastryCost = pastryCount * 2;
+      if(pastryCount > 2)
+      {
+        PastryCost = (pastryCount * 2) - thirdPastryCount;
+      }
+
+      return PastryCost;
+    }
+
+  }
 
 }
