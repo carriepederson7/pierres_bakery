@@ -22,13 +22,11 @@ namespace BakeryStore
       {
         Console.WriteLine("How many loaves would you like to buy?");
         string stringLoafCount = Console.ReadLine();
-        int loafCount = int.Parse(stringLoafCount);
-
-        Console.WriteLine(loafCount);
-
-
-        Console.WriteLine(newBread.AddLoaf(loafCount));
-        Console.WriteLine(newBread.BreadCount);
+        int intLoafCount = int.Parse(stringLoafCount);
+        double loafCount = (int)intLoafCount;
+        double thirdLoafCount = (int)loafCount / 3;
+        Console.WriteLine("Your cost is:");
+        Console.WriteLine(newBread.AddLoaf(loafCount, thirdLoafCount));
       }
 
 

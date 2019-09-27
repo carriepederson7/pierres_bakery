@@ -3,21 +3,20 @@ namespace BakeryStore
 {
   public class Bread
   {
-    // public string Loaf {get; set;}
-    public int LoafCost {get; set;}
-    public int BreadCount {get; set;}
+    public double LoafCost {get; set;}
 
     public Bread()
     {
-      // Loaf = "loaf";
       LoafCost = 0;
-      BreadCount = 0;
     }
 
-    public int AddLoaf(int loafCount)
+    public double AddLoaf(double loafCount, double thirdLoafCount)
     {
       LoafCost = loafCount * 5;
-      BreadCount ++;
+      if(loafCount > 2)
+      {
+        LoafCost = (loafCount * 5) - (thirdLoafCount * 5);
+      }
       return LoafCost;
     }
 
