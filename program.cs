@@ -10,15 +10,19 @@ namespace BakeryStore
     public static void Main()
 
     {
-      Bread newBread = new Bread();
-      Pastry newPastry = new Pastry();
-
       Console.WriteLine("Welcome to Pierre's Bakery!");
       Console.WriteLine("We sell muffins for $2 and loaves of bread for $5.");
       Console.WriteLine("Loaf Special: Buy 2, get 1 free.");
       Console.WriteLine("Muffin Special: Buy 2, get third muffin for $1.");
 
-      Console.WriteLine("What would you like to buy? loaf/pastry");
+      Bread newBread = new Bread();
+      Pastry newPastry = new Pastry();
+      addBakery(newBread, newPastry);
+    }
+
+    public static void addBakery(Bread newBread, Pastry newPastry)
+    {
+      Console.WriteLine("What would you like to buy? loaf/pastry/leave-store");
       string breadChoice = Console.ReadLine();
       if(breadChoice == "loaf" || breadChoice == "Loaf")
       {
@@ -29,6 +33,7 @@ namespace BakeryStore
         double thirdLoafCount = (int)loafCount / 3;
         Console.WriteLine("Your cost is:");
         Console.WriteLine(newBread.AddLoaf(loafCount, thirdLoafCount));
+        addBakery(newBread, newPastry);
       }
       else if(breadChoice == "pastry" || breadChoice == "Pastry")
       {
@@ -39,12 +44,17 @@ namespace BakeryStore
         double thirdPastryCount = (int)pastryCount / 3;
         Console.WriteLine("Your cost is:");
         Console.WriteLine(newPastry.AddPastry(pastryCount, thirdPastryCount));
-
-
+        addBakery(newBread, newPastry);
+      }
+      else
+      {
+        Console.WriteLine("Goodbye!");
       }
 
-
     }
+
+
+
 
 
   }
