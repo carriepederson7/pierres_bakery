@@ -1,6 +1,6 @@
 # _Pierre's Bakery_
 
-#### _Program in console to gnerate price of bakery items._
+#### _Program in console to generate price of bakery items._
 
 #### By _**Carrie Schmid**_
 
